@@ -1,5 +1,5 @@
 # ENES100SimulationTranslator
-A convenience tool for converting OSV code to be compatible with the ENES100 vision system simulator.
+A convenience tool for making your OSV code compatible with the ENES100 vision system simulator.
 
 ## Download
 Go to our release page [here](https://github.com/zbreit/ENES100SimulationTranslator/releases) and download `simulate.exe` and `simulation-settings.json`
