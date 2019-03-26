@@ -29,7 +29,7 @@ The executable (`simulate.exe`) holds all of the logic for converting your code 
 ### The Configruation File
 The configuration file (`simulation-settings.json`) allows you to specify the important settings for the translator (e.g., the path to your code files, the names of your own functions). The important settings are listed below:
 
-```json
+```js
 {
     "functionNameReplacements": {
         "readDistanceSensor1": "double getFrontDistance",
@@ -52,7 +52,7 @@ The configuration file is in the [JSON format](https://www.w3schools.com/js/js_j
    - `double getSideDistance()`
 
     You would specify your `functionNameReplacements` object like so in the JSON:
-```json
+```js
     "functionNameReplacements": {
         "readDistanceSensor1": "double getFrontDistance",
         "readDistanceSensor4": "double getSideDistance",
@@ -62,7 +62,7 @@ The configuration file is in the [JSON format](https://www.w3schools.com/js/js_j
     },
 ```
 The names of the functions in the simulation libraries act as the keys, while the names of your own functions go on the right. Your functions should be in the format `dataType functionName`. A complete list of available function settings can be found below:
-```json
+```js
     "functionNameReplacements": {
         "readDistanceSensor1": ...,
         "readDistanceSensor2": ...,
@@ -74,7 +74,7 @@ The names of the functions in the simulation libraries act as the keys, while th
     },
 ```
 4. Save your file! For our example, the final file should look like this in the end (*Note: the order of the key, value pairs doesn't matter*):
-```json
+```js
     "functionNameReplacements": {
         "readDistanceSensor1": "double getFrontDistance",
         "readDistanceSensor4": "double getSideDistance",
