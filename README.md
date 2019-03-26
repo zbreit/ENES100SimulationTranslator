@@ -2,8 +2,7 @@
 A convenience tool for converting OSV code to be compatible with the ENES100 vision system simulator.
 
 ## Download
-Download the .ZIP folder for the repository, extract the
-
+Go to our release page [here](https://github.com/zbreit/ENES100SimulationTranslator/releases) and download `simulate.exe` and `simulation-settings.json`
 
 ## How to Use It
 Once you setup your configuration file, just run these commands in the terminal:
