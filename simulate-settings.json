@@ -1,0 +1,11 @@
+{
+    "functionNameReplacements": {
+        "readDistanceSensor1": "double getFrontDistance",
+        "readDistanceSensor4": "void readRightSensor",
+        "readDistanceSensor6": "void readBackRightSensor",
+        "setLeftMotorPWM": "void setLeftSpeed",
+        "setRightMotorPWM": "void setRightSpeed",
+        "turnOffMotors": "void stopMotors"
+    },
+    "pathToSourceFile": "ActualOSVCode/ActualOSVCode.ino"
+}
