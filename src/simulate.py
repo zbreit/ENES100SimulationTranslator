@@ -15,7 +15,7 @@ def translate_to_simulation(codeString):
     codeString = sub(r'void +setup\( *\) *{', 
         'void setup() {\n\tTankSimulation.begin();',
         codeString)
-    codeString = sub(r'\.begin\(.*?\)',
+    codeString = sub(r'Enes100.begin\(.*?\)',
         '.begin()',
         codeString)
     codeString = sub(r'ping\( *\)',

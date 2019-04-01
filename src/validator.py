@@ -12,7 +12,7 @@ class SettingsValidator:
     @staticmethod
     def isFunction(function):
         """Returns true if the given function value follows the format 'dataType functionName'"""
-        return isinstance(function, str) and match(r'^(void|int|float|double|bool|long)\s\w[\w\d]*$', function, M)
+        return isinstance(function, str) and match(r'^(void|int|float|double|bool|long)\s\w[\w\d]*(\.\w[\w\d]*)?$', function, M)
     
     @staticmethod
     def fixConfigs(settings):
