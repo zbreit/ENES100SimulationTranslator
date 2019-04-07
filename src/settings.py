@@ -59,7 +59,7 @@ class SimulationSettings:
         if 'functionNameReplacements' in propertyList:
             errorStr += 'Function values must be in the form "dataType functionName".'
         elif 'pathToSourceFile' in propertyList:
-            errorStr += 'The path to the source code file must be in the form "*.ino".'
+            errorStr += 'The path to the source code file must an existing file in the form "*.ino".'
 
         print(errorStr)
 

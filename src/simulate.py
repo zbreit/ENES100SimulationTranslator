@@ -87,7 +87,7 @@ def setup_simulation_directory():
     """Copy every .ino file from the current directory into a new directory
        (called 'OSVSimulation/') in the parent folder"""
     PATH_TO_SOURCE_FILE = Path(SETTINGS.get('pathToSourceFile'))
-    simulationDir = PATH_TO_SOURCE_FILE.parent / '../OSVSimulation'
+    simulationDir = PATH_TO_SOURCE_FILE.parent.parent / 'OSVSimulation'
     recursively_copy(PATH_TO_SOURCE_FILE.parent, simulationDir)
     rename_src_file(PATH_TO_SOURCE_FILE.name, simulationDir)
 
