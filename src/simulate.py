@@ -45,14 +45,22 @@ def replace_configured_functions(inputCode):
 
 def delete_definition(functionPrototype, inputCode):
     """Deletes the function definition for the provided function"""
-    functionPrototype = sub(r'(\w+) \w+\.(\w+)', r'\1 \2', functionPrototype)
-    functionWords = functionPrototype.split(' ')
-    dataType, functionName = functionWords[0], functionWords[1]
-    functionDefinitionRegex = compile(dataType
-                                    + r' *?(\w+::)?'
-                                    + functionName
-                                    + r' *?\(.*?\) *?\{(.|\n)*?\}', 
-                                    MULTILINE)
+    searchRegex = r'(\w+) (\w+\.)?(\w+)'
+    replaceRegex = r'\1 \3'
+    isStatic = '::' in functionPrototype
+    if isStatic:
+        searchRegex = r'(\w+) (\w+::\w+)'
+        replaceRegex = r'\1 \2'
+    
+    functionPrototype = sub(searchRegex, replaceRegex, functionPrototype)
+    dataType, functionName = functionPrototype.split(' ')
+
+
+    functionDefinitionRegex = dataType + r' *?(\w+::)?' + functionName + r' *?\(.*?\) *?\{(.|\n)*?\}'
+    if isStatic:
+        functionDefinitionRegex = r'static ' + functionDefinitionRegex
+
+    functionDefinitionRegex = compile(functionDefinitionRegex, MULTILINE)
     return sub(functionDefinitionRegex, '', inputCode)
 
 

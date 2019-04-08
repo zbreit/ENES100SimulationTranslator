@@ -1,5 +1,6 @@
-from re import match, M
+from re import match
 from pathlib import Path
+
 
 class SettingsValidator:
     """A collection of static functions for validating the user's simulation settings"""
@@ -12,14 +13,14 @@ class SettingsValidator:
     @staticmethod
     def isFunction(function):
         """Returns true if the given function value follows the format 'dataType functionName'"""
-        return isinstance(function, str) and match(r'^(void|int|float|double|bool|long)\s\w[\w\d]*(\.\w[\w\d]*)?$', function, M)
+        return isinstance(function, str) and match(r'^(void|int|float|double|bool|long)\s\w[\w]*((\.|(::))\w[\w]*)?$', function)
     
     @staticmethod
     def fixConfigs(settings):
         # Make sure the source file is correct
         SettingsValidator.fixProperty('pathToSourceFile',
-            validator=SettingsValidator.isCodeFile,
-            settings=settings)
+                                      validator=SettingsValidator.isCodeFile,
+                                      settings=settings)
         
         # Make sure the functionNameReplacement dictionary exists
         functionReplacements = {}
@@ -33,8 +34,8 @@ class SettingsValidator:
         # Make sure all function names are valid
         for function in functionReplacements:
             SettingsValidator.fixProperty('functionNameReplacements', function,
-                validator=SettingsValidator.isFunction,
-                settings=settings)
+                                          validator=SettingsValidator.isFunction,
+                                          settings=settings)
 
     @staticmethod
     def fixProperty(*propertyList, validator, settings):

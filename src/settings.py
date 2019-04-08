@@ -2,6 +2,7 @@ import json
 from re import match
 from validator import SettingsValidator
 
+
 class SimulationSettings:
     """A class to that retreives and updates the user settings for the simulation script."""
 
