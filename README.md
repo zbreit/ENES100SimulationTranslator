@@ -25,7 +25,7 @@ There are two critical componenets to the translator: the translator executable 
 The executable (`simulate.exe`) holds all of the logic for converting your code into valid code for the vision simulator. It should be placed wherever you see convenient, although I would recommend placing it in the parent directory of your code folder, like so:
 ![Sample Folder Structure](https://imgur.com/zail7MW.png)
 
-### The Configruation File
+### The Configuration File
 The configuration file (`simulation-settings.json`) allows you to specify the important settings for the translator (e.g., the path to your code files, the names of your own functions). The important settings are listed below:
 
 ```js
